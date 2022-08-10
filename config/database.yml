@@ -12,7 +12,7 @@ default: &default
 development:
   adapter: postgresql
   encoding: unicode
-  database: idsaverdjango
+  database: credwisedb
   host: localhost
   pool: 5
   username: postgres

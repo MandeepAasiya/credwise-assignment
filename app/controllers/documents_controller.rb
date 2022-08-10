@@ -1,10 +1,11 @@
 class DocumentsController < ApplicationController
   before_action :authenticate_user!
+  load_and_authorize_resource
   before_action :set_document, only: %i[ show edit update destroy ]
 
   # GET /documents or /documents.json
   def index
-    @documents = Document.all
+    @documents = Document.where(user_id: current_user)
   end
 
   # GET /documents/1 or /documents/1.json
